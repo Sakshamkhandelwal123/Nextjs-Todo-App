@@ -32,7 +32,7 @@ export default function TodoList({
             btnText === "Show"
               ? "bg-green-400 rounded-md hover:bg-green-600"
               : "bg-red-400 rounded-md hover:bg-red-600"
-          }`}
+          } ${todos.length === 0 ? "hidden" : "block"}`}
         >
           {btnText}
         </button>
