@@ -42,7 +42,7 @@ export default function TodoList({
         {todos.map((todo) => (
           <li
             key={todo.id}
-            className="relative rounded-sm bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 w-[440px] p-1 mb-2"
+            className="relative rounded-sm bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 w-80 md:w-[440px] p-1 mb-2"
           >
             <input
               type="checkbox"
@@ -52,10 +52,12 @@ export default function TodoList({
               onChange={() => updateIsCompleted(todo.id)}
             />
 
-            <div className="bg-gray-800">
+            <div className="bg-gray-800 pl-8 pr-8 py-1">
               <h1
-                className={`text-2xl p-1 pl-6 text-white ${
-                  todo.isCompleted ? "line-through" : ""
+                className={`text-2xl text-white break-words ${
+                  todo.isCompleted
+                    ? "line-through decoration-red-800 decoration-[3px]"
+                    : ""
                 }`}
               >
                 {todo.title}
